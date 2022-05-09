@@ -21,7 +21,7 @@ export class NodemailerMailAdapter implements MailAdapter {
       html: [
         `<div style="font-family: sans-serif; font-size: 16px; color: #111">`,
         "<p>Hello Support Widget,</p><br>",
-        `<p>Message type: <strong>${comment}</strong></p>`,
+        `<p>Message type: <strong>${type}</strong></p>`,
         `<p>Comment: ${comment}</p>`,
         screenshot
           ? `<img width="100%" height="100%" src="${screenshot}" />`
