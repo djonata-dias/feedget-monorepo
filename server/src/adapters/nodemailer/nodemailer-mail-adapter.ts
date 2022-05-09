@@ -13,6 +13,7 @@ var transport = nodemailer.createTransport({
 export class NodemailerMailAdapter implements MailAdapter {
   async sendMail(data: SendMailData) {
     const { email, type, comment, screenshot } = data;
+
     await transport.sendMail({
       from: email || "support@widget.com",
       to: "Djonata S. Dias, diasdjonata@gmail.com", // list of receivers
@@ -22,9 +23,11 @@ export class NodemailerMailAdapter implements MailAdapter {
         "<p>Hello Support Widget,</p><br>",
         `<p>Message type: <strong>${comment}</strong></p>`,
         `<p>Comment: ${comment}</p>`,
-        screenshot ? `<img width="100%" height="100%" src:${screenshot}/>` : "",
+        screenshot
+          ? `<img width="100%" height="100%" src="${screenshot}" />`
+          : "",
         `</div>`,
-      ].join("/n"),
+      ].join("\n"),
     });
   }
 }
