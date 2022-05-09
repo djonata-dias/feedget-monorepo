@@ -3,7 +3,7 @@ import { FeedbackType, feedbackTypes } from "..";
 import { ArrowLeft, Camera } from "phosphor-react";
 import ScreeshotButton from "../ScreenshotButton";
 import { FormEvent, useState } from "react";
-import { apiRequest } from "libs/apiRequest";
+import apiRequest from "../../../libs/apiRequest";
 
 interface FeedbackContentStepProps {
     feedbackType: FeedbackType;
