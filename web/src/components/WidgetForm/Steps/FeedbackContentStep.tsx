@@ -22,7 +22,7 @@ export default function FeedbackContentStep({
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
-        apiRequest.post('/feedback', {
+        apiRequest.post('/feedbacks', {
             type: feedbackType,
             comment,
             screenshot
