@@ -18,7 +18,7 @@ export class NodemailerMailAdapter implements MailAdapter {
       to: "Djonata S. Dias, diasdjonata@gmail.com", // list of receivers
       subject: `Support Widget Message`, // Subject line
       html: [
-        `<div> style="font-family: sans-serif; font-size: 16px; color: #111">`,
+        `<div style="font-family: sans-serif; font-size: 16px; color: #111">`,
         "<p>Hello Support Widget,</p><br>",
         `<p>Message type: <strong>${comment}</strong></p>`,
         `<p>Comment: ${comment}</p>`,
