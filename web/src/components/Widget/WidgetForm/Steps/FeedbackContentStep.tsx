@@ -1,9 +1,9 @@
-import CloseButton from "../../CloseButton";
+import CloseButton from "../../../CloseButton";
 import { FeedbackType, feedbackTypes } from "..";
 import { ArrowLeft, Camera } from "phosphor-react";
 import ScreeshotButton from "../ScreenshotButton";
 import { FormEvent, useState } from "react";
-import apiRequest from "../../../libs/apiRequest";
+import apiRequest from "../../../../libs/apiRequest";
 
 interface FeedbackContentStepProps {
     feedbackType: FeedbackType;
@@ -35,12 +35,12 @@ export default function FeedbackContentStep({
             <header>
                 <button
                     type="button"
-                    className="top-5 left-5 absolute text-zinc-400"
+                    className="top-5 left-5 absolute text-zinc-900 dark:text-zinc-400"
                     onClick={onFeedbackRestartRequested}
                 >
                     <ArrowLeft />
                 </button>
-                <span className="flex items-center gap-2 text-xl leading-6">
+                <span className="flex items-center gap-2 text-xl leading-6 text-zinc-900 dark:text-zinc-400">
                     <img
                         src={feedbackTypeInfo.image.source}
                         alt={feedbackTypeInfo.image.alt}
@@ -52,8 +52,8 @@ export default function FeedbackContentStep({
             </header>
             <form className="my-4 w-full" onSubmit={handleSubmit}>
                 <textarea
-                    className="min-w-[304px] w-full min-h-[112px] tex-sm placeholder-zinc-400 text-zinc-100  border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 rezise:none scrollbar scrollbar-color  scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin"
-                    placeholder="Conte com detalhes sobre o que está acontecendo..."
+                    className="min-w-[304px] w-full min-h-[112px] tex-sm placeholder-zinc-600 dark:placeholder-zinc-400 text-zinc-900 dark:text-zinc-100  border-zinc-400 dark:border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 resize:none scrollbar scrollbar-color  scrollbar-thumb-zinc-400 dark:scrollbar-thumb-zinc-700 scrollbar-track-transparent"
+                    placeholder={feedbackTypeInfo.placeholder}
                     onChange={(e) => setComment(e.target.value)}
                     value={comment}
                 />
