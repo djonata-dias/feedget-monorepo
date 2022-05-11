@@ -14,7 +14,7 @@ const themeIcons = {
 const themeMode = {
     "light": () => localStorage.theme = 'light',
     "dark": () => localStorage.theme = 'dark',
-    "system": () => localStorage.removeItem('theme')
+    "system": () => localStorage.theme = ''
 }
 
 type themes = keyof typeof themeIcons
@@ -24,10 +24,9 @@ export function ThemeModeButton() {
 
     useEffect(() => {
         themeMode[activeTheme]()
-    }, [activeTheme])
+    }, [activeTheme,])
 
     useEffect(() => {
-
         if (
             localStorage.theme === 'dark' ||
             (
@@ -39,7 +38,7 @@ export function ThemeModeButton() {
         } else {
             document.documentElement.classList.remove('dark')
         }
-    }, [localStorage.theme])
+    }, [localStorage.theme,])
 
     return (
         <div className="absolute right-2 top-0">
