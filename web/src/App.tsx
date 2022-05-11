@@ -1,9 +1,13 @@
-import Home from "Home";
+import Home from "./Home";
+import Header from './components/Header'
+import Widget from './components/Widget'
 
 export function App() {
   return (
     <>
-      <Home />
+      <Header />
+      <Widget />
+      {/* <Home /> */}
     </>
   )
 }

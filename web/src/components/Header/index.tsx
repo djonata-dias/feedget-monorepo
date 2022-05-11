@@ -6,7 +6,7 @@ export default function Header() {
 
 
     return (
-        <div className="bg-zinc-300 dark:bg-zinc-800 w-full absolute top-0 h-11 flex">
+        <div className="bg-zinc-300 dark:bg-zinc-800 w-full fixed top-0 h-11 flex">
             <ThemeModeButton />
         </div>
     );
